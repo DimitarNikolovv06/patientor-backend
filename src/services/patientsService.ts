@@ -34,14 +34,14 @@ const getSinglePatient = (id: string): Patient | undefined =>
 const postPatientEntry = (
   id: string,
   entry: Omit<Entry, "id">
-): Entry[] | undefined => {
+): Entry | undefined => {
   const patient = patientsData.find((p) => p.id === id);
   const newEntry: Entry = utils.toNewEntry(entry) as Entry;
   newEntry.id = `random id ${Math.random() * 100000}`;
 
   patient?.entries.push(newEntry);
 
-  return patient?.entries;
+  return newEntry;
 };
 
 export default {
