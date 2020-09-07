@@ -1,6 +1,6 @@
 # patientor-backend
 
-#Avaiable scripts
+# Avaiable scripts
 
 ### `npm run dev`
 
