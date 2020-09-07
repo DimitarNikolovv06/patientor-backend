@@ -94,12 +94,15 @@ const parseHealthCheckRating = (rating: any): HealthCheckRating => {
   return rating;
 };
 
-const parseDischarge = (obj: any): { date: string; criteria: string } => {
+const parseDischarge = (obj: {
+  date: any;
+  criteria: any;
+}): { date: string; criteria: string } => {
   if (
     !obj.date ||
     !obj.criteria ||
-    !isString(obj.date) ||
-    isString(obj.criteria)
+    !isDate(obj.date) ||
+    !isString(obj.criteria)
   ) {
     throw new Error("Invalid date or criteria values");
   }
